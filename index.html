@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#E6B84A">
+
+<title>Para Fabiana ❤️</title>
+
+<style>
+
+:root{
+    --dorado:#E6B84A;
+    --dorado-suave:#F7E7A9;
+    --crema:#FFF9E8;
+    --blanco:#FFFDF6;
+    --texto:#2F2A20;
+    --gris:#756D5C;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--crema);
+    color:var(--texto);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.7;
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero{
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px 22px;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 50% 35%,
+        #fffef7 0%,
+        #fff8dc 45%,
+        #f5df96 100%
+    );
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:330px;
+    height:330px;
+    border-radius:50%;
+    background:var(--dorado-suave);
+    top:-130px;
+    right:-100px;
+    opacity:.5;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:#ffffff;
+    bottom:-140px;
+    left:-100px;
+    opacity:.5;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:720px;
+}
+
+.eyebrow{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#8a6a1d;
+}
+
+.hero h1{
+    font-size:clamp(46px,12vw,82px);
+    line-height:1;
+    font-weight:500;
+    margin:20px 0 18px;
+}
+
+.hero-text{
+    font-size:clamp(17px,4.5vw,23px);
+    margin:0 auto 30px;
+    max-width:650px;
+}
+
+.date{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:.25em;
+}
+
+.start-button{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 24px;
+    border-radius:50px;
+    border:1px solid #b48b2b;
+    background:#fffaf0;
+    color:var(--texto);
+    text-decoration:none;
+    transition:.3s;
+}
+
+.start-button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(80,60,10,.15);
+}
+
+.start-button:active{
+    transform:scale(.97);
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+main{
+    max-width:900px;
+    margin:auto;
+    padding:10px 18px 60px;
+}
+
+.chapter{
+    padding:90px 0 30px;
+}
+
+.chapter-number{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#9a7929;
+}
+
+h2{
+    font-size:clamp(31px,7vw,52px);
+    line-height:1.12;
+    font-weight:500;
+    margin:10px 0 20px;
+}
+
+.lead{
+    font-size:18px;
+    color:var(--gris);
+}
+
+.card{
+    background:rgba(255,255,255,.65);
+    border:1px solid rgba(47,42,32,.13);
+    border-radius:26px;
+    padding:24px;
+    box-shadow:0 12px 40px rgba(80,60,10,.06);
+}
+
+/* =========================
+   FOTOS
+========================= */
+
+.photo{
+
+    width:100%;
+    max-width:700px;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    display:block;
+    margin:28px auto 0;
+    border-radius:24px;
+    background:linear-gradient(
+        135deg,
+        #f7e7a9,
+        #fffdf6
+    );
+    box-shadow:
+        0 15px 40px rgba(80,60,10,.12);
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+.photo-surprise{
+    position:relative;
+    max-width:700px;
+    margin:28px auto 0;
+    border-radius:24px;
+    overflow:hidden;
+    cursor:pointer;
+    background:#f7e7a9;
+    box-shadow:0 15px 40px rgba(80,60,10,.12);
+}
+
+.photo-surprise .photo{
+    margin:0;
+    transition:
+        filter 1s ease,
+        transform 1s ease;
+    filter:blur(18px);
+    transform:scale(1.08);
+}
+
+.photo-surprise::after{
+    content:"Toca para descubrirlo ♥";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(255,249,232,.72);
+    color:#5f5136;
+    font-family:Georgia,serif;
+    font-size:18px;
+    letter-spacing:.03em;
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+.photo-surprise.revealed .photo{
+    filter:blur(0);
+    transform:scale(1);
+}
+
+.photo-surprise.revealed::after{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.photo-bajar{
+    object-position:center 35%;
+}
+
+.photo-note{
+    text-align:center;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    color:#8b806b;
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:700px){
+
+    .chapter{
+        padding-top:70px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+}
+
+/* =========================
+   SECCIÓN DE CANCIÓN
+========================= */
+
+.song{
+    text-align:center;
+    padding:40px 24px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(247,231,169,.45),
+            transparent 55%
+        ),
+        var(--blanco);
+}
+
+.song::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(230,184,74,.08);
+    top:-90px;
+    left:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+}
+
+.song-icon{
+    width:78px;
+    height:78px;
+    margin:0 auto 22px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--dorado-suave);
+    color:#8b6d24;
+    font-size:32px;
+    box-shadow:
+        0 8px 25px rgba(80,60,10,.10);
+
+}
+
+.song-title{
+    font-size:30px;
+    margin-bottom:5px;
+    position:relative;
+}
+
+.song-artist{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:.14em;
+    color:#8b806b;
+    text-transform:uppercase;
+    position:relative;
+}
+
+.song .lead{
+    position:relative;
+}
+
+.audio{
+    width:100%;
+    margin-top:28px;
+    position:relative;
+}
+
+@keyframes musicFloat{
+    0%,100%{
+        transform:translateY(0) scale(1) rotate(0deg);
+    }
+
+    25%{
+        transform:translateY(-8px) scale(1.04) rotate(-2deg);
+    }
+
+    50%{
+        transform:translateY(-14px) scale(1.08) rotate(0deg);
+    }
+
+    75%{
+        transform:translateY(-8px) scale(1.04) rotate(2deg);
+    }
+
+}
+
+.song-icon.playing{
+    animation:musicFloat 2s ease-in-out infinite;
+}
+
+/* =========================
+   CARTA FINAL
+========================= */
+
+.letter{
+    background:#fffdf6;
+    border:1px solid rgba(47,42,32,.12);
+    border-radius:28px;
+    padding:30px 24px;
+    box-shadow:0 15px 45px rgba(80,60,10,.08);
+}
+
+.letter p{
+    font-size:17px;
+    line-height:1.9;
+    margin:0 0 22px;
+}
+
+.letter-signature{
+    margin-top:35px;
+    text-align:right;
+    font-size:20px;
+    font-style:italic;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.final-content{
+    max-width:650px;
+}
+
+.infinity{
+    font-family:Arial,sans-serif;
+    font-size:18px;
+    letter-spacing:.25em;
+    margin-bottom:25px;
+    color:#8a6a1d;
+}
+
+.final h2{
+    font-size:clamp(38px,9vw,64px);
+}
+
+.final-message{
+    font-size:18px;
+    color:var(--gris);
+}
+
+/* CARTA */
+
+.letter-envelope{
+    text-align:center;
+    padding:30px 10px 10px;
+}
+
+.envelope{
+    position:relative;
+    width:100%;
+    max-width:650px;
+    height:420px;
+    margin:0 auto;
+    perspective:1200px;
+}
+
+.envelope-back{
+    position:absolute;
+    inset:0;
+    background:#f3d98b;
+    border-radius:18px;
+    box-shadow:
+        0 20px 45px rgba(80,60,10,.16);
+}
+
+.letter-paper{
+    position:absolute;
+    z-index:2;
+    left:5%;
+    width:90%;
+    height:92%;
+    bottom:3%;
+    background:#fffdf6;
+    border-radius:10px;
+    overflow:hidden;
+
+    transform:
+        translateY(120px);
+
+    opacity:0;
+
+    transition:
+        transform 1.2s ease .6s,
+        opacity .6s ease .6s,
+        box-shadow 1s ease;
+
+    box-shadow:
+        0 5px 20px rgba(80,60,10,.10);
+}
+
+.letter-content{
+    text-align:left;
+    padding:35px 30px;
+    font-family:Georgia,serif;
+    font-size:16px;
+    line-height:1.8;
+    color:var(--texto);
+    height:100%;
+    overflow-y:auto;
+}
+
+.letter-content p{
+    margin:0 0 22px;
+}
+
+.letter-signature{
+    margin-top:30px;
+    text-align:right;
+    font-size:22px;
+    color:#8b6d24;
+    font-style:italic;
+}
+
+.envelope-flap{
+    position:absolute;
+    z-index:4;
+    top:0;
+    left:0;
+    width:100%;
+    height:55%;
+    background:#e8c96e;
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+    transform-origin:top center;
+    transition:
+        transform 1s ease,
+        z-index 0s linear .5s;
+}
+
+.envelope-heart{
+    position:absolute;
+    z-index:5;
+    top:42%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff9e8;
+    color:#b18a2c;
+    font-size:25px;
+    box-shadow:
+        0 5px 20px rgba(80,60,10,.15);
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+.letter-hint{
+    margin-top:22px;
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#8b806b;
+}
+
+/* CARTA ABIERTA */
+
+.letter-envelope.open .envelope-flap{
+    transform:rotateX(180deg);
+    z-index:1;
+}
+
+.letter-envelope.open .envelope-heart{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.5);
+}
+
+.letter-envelope.open .letter-paper{
+    transform:translateY(-45px);
+    opacity:1;
+
+    box-shadow:
+        0 20px 45px rgba(80,60,10,.18);
+}
+
+.letter-envelope.open .letter-hint{
+    opacity:0;
+}
+
+@media(max-width:600px){
+
+    .envelope{
+        height:380px;
+    }
+
+    .letter-content{
+        padding:28px 22px;
+        font-size:15px;
+        line-height:1.7;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     PORTADA
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content reveal">
+
+        <div class="eyebrow">
+            Para Fabiana
+        </div>
+
+        <h1>
+            Nuestra historia
+        </h1>
+
+        <p class="hero-text">
+            8 años para volver a encontrarnos.
+            Un año para descubrir que quiero
+            toda una vida contigo.
+        </p>
+
+        <div class="date">
+            21 · 09 · 2025 — ∞
+        </div>
+
+        <a href="#historia" class="start-button">
+            Comenzar nuestra historia ♥
+        </a>
+
+    </div>
+
+</section>
+
+
+<main id="historia">
+
+<!-- =========================
+     CAPÍTULO I
+========================= -->
+
+<section class="chapter reveal">
+
+    <div class="chapter-number">
+        Capítulo I · Hace 8 años
+    </div>
+
+    <h2>
+        Todo comenzó mucho antes.
+    </h2>
+
+    <div class="card">
+
+        <p class="lead">
+            Nos conocimos hace ocho años.
+            El tiempo pasó, nuestras vidas siguieron
+            caminos diferentes y, sin saberlo,
+            todavía quedaba una historia por escribir.
+        </p>
+
+        <div class="photo-surprise">
+    			<img src="fotos/foto-01.JPG" class="photo">
+		  </div>
+
+</div>
+
+        <p class="photo-note">
+            Nuestra historia comenzó mucho antes
+            de que pudiéramos imaginarlo.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CAPÍTULO II
+========================= -->
+
+<section class="chapter reveal">
+
+    <div class="chapter-number">
+        Capítulo II · Volvimos a encontrarnos
+    </div>
+
+    <h2>
+        Y entonces, nos volvimos a ver.
+    </h2>
+
+    <div class="card">
+
+        <p class="lead">
+            Fue muy bonito. Me trajiste muchos recuerdos
+            y no podía dejar de mirarte porque te veías
+            muy hermosa.
+        </p>
+
+        <p class="lead">
+            Después de tantos años, nuestros caminos
+            volvieron a cruzarse.
+        </p>
+
+        <div class="photo-surprise">
+    	  		<img src="fotos/foto-02.JPG" class="photo photo-bajar">
+		  </div>
+
+        <p class="photo-note">
+            Aquí irá una foto especial de nuestro reencuentro.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CAPÍTULO III
+========================= -->
+
+<section class="chapter reveal">
+
+    <div class="chapter-number">
+        Capítulo III · La playa
+    </div>
+
+    <h2>
+        El lugar donde comenzó esta nueva historia.
+    </h2>
+
+    <div class="card">
+
+    <p style="
+        text-align:center;
+        font-style:italic;
+        font-size:22px;
+        margin:0 0 28px;
+    ">
+        “Y fue frente al mar donde comenzó
+        nuestra historia.” ❤️
+    </p>
+
+    <p class="lead">
+        La playa siempre tendrá un lugar especial
+            en nuestra historia.
+        </p>
+
+        <p class="lead">
+            Fue allí donde te pregunté si querías
+            ser mi novia.
+        </p>
+
+        <p class="lead">
+            Y desde aquel momento, un lugar que ya era
+            bonito se convirtió en uno de nuestros
+            recuerdos más importantes.
+        </p>
+
+        <div class="photo-surprise">
+    			<img src="fotos/foto-03.HEIC" class="photo">
+		  </div>
+
+        <p class="photo-note">
+            El lugar donde comenzó oficialmente
+            nuestra historia.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CAPÍTULO IV
+========================= -->
+
+<section class="chapter reveal">
+
+    <div class="chapter-number">
+        Capítulo IV · Una semana contigo
+    </div>
+
+    <h2>
+        Una semana que significó mucho más.
+    </h2>
+
+    <div class="card">
+
+        <p class="lead">
+            Pudimos vivir juntos, compartir nuestros días,
+            despertar uno al lado del otro y descubrir
+            cómo se siente realmente tenerte cerca.
+        </p>
+
+        <p class="lead">
+            Para mí no fue simplemente una semana.
+        </p>
+
+        <p class="lead">
+            Significó un acercamiento para saber, en realidad,
+            que quiero pasar toda mi vida contigo.
+        </p>
+
+        <div class="photo-surprise">
+    			<img src="fotos/foto-04.HEIC" class="photo photo-bajar">
+		  </div>
+
+        <p class="photo-note">
+            Una semana que terminó convirtiéndose
+            en uno de mis recuerdos favoritos.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CAPÍTULO V
+========================= -->
+
+<section class="chapter reveal">
+
+    <div class="chapter-number">
+        Capítulo V · Lo que amo de ti
+    </div>
+
+    <h2>
+        Hay tantas cosas que admiro de ti.
+    </h2>
+
+    <div class="card">
+
+        <p class="lead">
+            Tu actitud.
+        </p>
+
+        <p class="lead">
+            Tu sonrisa.
+        </p>
+
+        <p class="lead">
+            Tu perseverancia.
+        </p>
+
+        <p class="lead">
+            La manera en que ves las cosas.
+        </p>
+
+        <p class="lead">
+            Pero, sobre todo, amo la forma en que has
+            estado para mí.
+        </p>
+
+        <p class="lead">
+            Siento que gracias a ti he podido superar
+            muchas cosas y convertirme en una mejor
+            persona cada día.
+        </p>
+
+        <div class="photo-surprise">
+				<img src="fotos/foto-05.HEIC" class="photo">
+		  </div>
+
+        <p class="photo-note">
+            Porque hay personas que simplemente llegan
+            a tu vida y la hacen diferente.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CAPÍTULO VI
+========================= -->
+
+<section class="chapter reveal">
+
+    <div class="chapter-number">
+        Capítulo VI · Nuestra canción
+    </div>
+
+    <h2>
+        Y entonces, llegaste tú.
+    </h2>
+
+    <div class="card song">
+
+        <div class="song-icon">
+            ♫
+        </div>
+
+        <div class="song-title">
+            Llegaste tú
+        </div>
+
+        <div class="song-artist">
+            Jesse & Joy
+        </div>
+
+        <p class="lead">
+            Hay personas que llegan a nuestra vida una vez.
+        </p>
+
+        <p class="lead">
+            Y hay personas que, incluso después de muchos
+            años, encuentran el camino de regreso.
+        </p>
+
+        <p class="lead">
+            Esta canción me recuerda a ti. ❤️
+        </p>
+
+        <audio
+            class="audio"
+            controls
+            preload="metadata"
+        >
+
+            <source
+                src="musica/llegaste-tu.mp3"
+                type="audio/mpeg"
+            >
+
+            Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CARTA FINAL
+========================= -->
+
+<section class="chapter reveal">
+
+    <div class="chapter-number">
+        Último capítulo · Para ti
+    </div>
+
+    <h2>
+        Si algún día dudas...
+    </h2>
+
+   <div class="letter-envelope" id="letterEnvelope">
+
+    <div class="envelope">
+
+        <div class="envelope-back"></div>
+
+        <div class="letter-paper">
+
+            <div class="letter-content">
+
+                <p>
+                    Fabiana:
+                </p>
+
+                <p>
+                    Si estás leyendo esto, es porque llegaste hasta
+                    el final de algo que hice pensando solamente en ti.
+                </p>
+
+                <p>
+                    A veces pienso en que nos conocimos hace ocho años
+                    y me parece increíble todo lo que tuvo que pasar
+                    para que, después de tanto tiempo, nuestros caminos
+                    volvieran a encontrarse.
+                </p>
+
+                <p>
+                    Cuando te volví a ver, regresaron muchísimos
+                    recuerdos. Y recuerdo que no podía dejar de mirarte,
+                    porque te veía tan hermosa y, al mismo tiempo,
+                    sentía que estaba frente a alguien que ya conocía,
+                    pero que ahora podía conocer de una manera
+                    completamente diferente.
+                </p>
+
+                <p>
+                    Desde que estás en mi vida, siento que he superado
+                    muchas cosas. Me has ayudado a crecer y, de alguna
+                    manera, siento que cada día me haces querer ser
+                    una mejor persona.
+                </p>
+
+                <p>
+                    Y hay un recuerdo que guardo de una manera muy
+                    especial: aquella semana que pudimos compartir
+                    juntos, convivir, despertar y pasar nuestros días
+                    uno al lado del otro.
+                </p>
+
+                <p>
+                    Quizás para alguien más podría parecer simplemente
+                    una semana.
+                </p>
+
+                <p>
+                    Para mí significó mucho más.
+                </p>
+
+                <p>
+                    Me hizo darme cuenta de que no solamente disfruto
+                    estar contigo. Me hizo entender que quiero compartir
+                    mi vida contigo.
+                </p>
+
+                <p>
+                    Quiero seguir teniendo días normales contigo,
+                    momentos inesperados, viajes, risas, problemas que
+                    podamos superar juntos y recuerdos que todavía ni
+                    siquiera imaginamos.
+                </p>
+
+                <p>
+                    Y si hay algo que quiero prometerte, no es solamente
+                    estar contigo durante el próximo año.
+                </p>
+
+                <p>
+                    Quiero estar contigo el resto de mi vida.
+                </p>
+
+                <p>
+                    Quiero seguir eligiéndote.
+                </p>
+
+                <p>
+                    Quiero verte cumplir tus sueños, acompañarte cuando
+                    las cosas sean difíciles y celebrar contigo cuando
+                    todo salga bien.
+                </p>
+
+                <p>
+                    Quiero seguir viendo tu sonrisa, admirando tu
+                    perseverancia, tu actitud y esa manera tan tuya
+                    de ver las cosas.
+                </p>
+
+                <p>
+                    Y si algún día lees esto y dudas de cuánto te amo,
+                    quiero que recuerdes algo:
+                </p>
+
+                <p>
+                    Siempre voy a estar para ti.
+                </p>
+
+                <p>
+                    Siempre voy a querer que seas feliz.
+                </p>
+
+                <p>
+                    Y nunca quiero que pienses que quiero alejarme
+                    de tu lado.
+                </p>
+
+                <p>
+                    Porque después de todo lo que tuvo que pasar para
+                    volver a encontrarnos, hoy tengo algo muy claro:
+                </p>
+
+                <p>
+                    No quiero volver a perderte.
+                </p>
+
+                <p>
+                    Feliz primer año, Fabiana.
+                </p>
+
+                <p>
+                    Y ojalá este sea solamente el primero de muchísimos
+                    años que nos quedan por vivir juntos.
+                </p>
+
+                <div class="letter-signature">
+                    Te amo. ❤️
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="envelope-flap"></div>
+
+        <div class="envelope-heart">
+            ♥
+        </div>
+
+    </div>
+
+    <div class="letter-hint">
+        Toca la carta para abrirla ♥
+    </div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final reveal">
+
+    <div class="final-content">
+
+        <div class="infinity">
+            21 · 09 · 2025 — ∞
+        </div>
+
+        <h2>
+            Nuestra historia<br>
+            recién comienza.
+        </h2>
+
+        <p class="final-message">
+            Ocho años para volver a encontrarnos.
+            Un año para elegirnos.
+            Y toda una vida para seguir escribiendo
+            nuestra historia.
+        </p>
+
+        <p class="final-message">
+            Para ti, Fabiana. ❤️
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<script>
+
+/* Animaciones al aparecer */
+
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold:.12
+    }
+);
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+document.querySelectorAll('.photo-surprise').forEach(function(photo){
+    photo.addEventListener('click', function(){
+        photo.classList.add('revealed');
+    });
+});
+
+const audio = document.querySelector('.audio');
+const songIcon = document.querySelector('.song-icon');
+
+audio.addEventListener('play', function(){
+    songIcon.classList.add('playing');
+});
+
+audio.addEventListener('pause', function(){
+    songIcon.classList.remove('playing');
+});
+
+audio.addEventListener('ended', function(){
+    songIcon.classList.remove('playing');
+});
+
+const letterEnvelope =
+    document.querySelector('.letter-envelope');
+
+letterEnvelope.addEventListener('click', function(){
+
+    letterEnvelope.classList.toggle('open');
+
+});
+
+</script>
+
+</body>
+</html>
